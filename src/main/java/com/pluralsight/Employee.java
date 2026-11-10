@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 import java.time.LocalDateTime;
 
 public class Employee {
@@ -53,16 +55,17 @@ public class Employee {
 
     public void punchIn() {
         LocalDateTime start = LocalDateTime.now();
-        startTime = start.getHour() + ((double) start.getMinute() / 60);
+        startTime = start.getHour() + ((double) start.getMinute() / 60);//60.0 maybe put double in front of start
     }
 
     public void punchOut() {
         LocalDateTime time = LocalDateTime.now();
-        double end = time.getHour() + ((double) time.getMinute() / 60);
+        double end = time.getHour() + ((double) time.getMinute() / 60);//60.0, double in front of start
         double dayHoursWorked = end - startTime;
         hoursWorked += dayHoursWorked; //hoursWorked += dayHoursWorked
         System.out.println(hoursWorked);
     }
+
 }
 
 

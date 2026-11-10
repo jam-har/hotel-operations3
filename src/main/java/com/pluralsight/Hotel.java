@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public class Hotel {
     private String name;
     private int numberOfSuites;
@@ -15,8 +17,8 @@ public class Hotel {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
-        this.bookedSuites = bookedSuites;
-        this.bookedRooms = bookedRooms;
+        this.bookedSuites = bookedSuites;//should be 0
+        this.bookedRooms = bookedRooms;//should be 0
     }
 
     public int getAvailableSuites() {
@@ -27,11 +29,11 @@ public class Hotel {
         return numberOfRooms - bookedRooms;
     }
 
-    public boolean bookRoom(int roomCount, boolean suite) {
+    public boolean bookRoom(int roomCount, boolean suite) {//add if for roomCount <= 0
         if (suite) {
-            return roomCount <= getAvailableSuites();
+            return roomCount <= getAvailableSuites(); //also update count
         } else {
-            return roomCount <= getAvailableRooms();
-        }
+            return roomCount <= getAvailableRooms(); //also update count
+        }//return false for failed booking
     }
 }
