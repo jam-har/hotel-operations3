@@ -63,10 +63,6 @@ public class Employee {
         hoursWorked += dayHoursWorked; //hoursWorked += dayHoursWorked
         System.out.println(hoursWorked);
     }
-
-
-    //bonus: use if condition for start time == 0 (this means no previous start punch), if not use punch out calculation
-    // time input would be end time
 }
 
 
